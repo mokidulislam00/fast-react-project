@@ -1,6 +1,7 @@
 import Labib from "./components/Labib"
 import Rigan from "./components/Rigan"
 import Rafsan from "./components/rafsan"
+import File from "./components/File"
 
 function App()
  {
@@ -13,6 +14,7 @@ function App()
 <Rigan />
 <Rafsan />
 <Rafsan/>
+<File name="Ahmed Labib" phone="01700000000" address="Barisal, Bangladesh" />
 </>
  )
 }
