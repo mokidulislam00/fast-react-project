@@ -1,8 +1,9 @@
-function Rafsan(){
+function Rafsan({name, phone, address}){
     return(
         <>
-        <h1> Hello My Name is Rafsan</h1>
-        <p> this is my paragraph</p>
+        <h1>Hello My Name is {name}</h1>
+        <p> {phone}</p>
+        <p> {address}</p>
          </>
     )
 }

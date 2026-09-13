@@ -1,8 +1,9 @@
-function Rigan(){
+function Rigan({name, phone, address}){
     return(
         <> 
-        <h1> Hello My Name is Rigan</h1>
-        <p> this is my paragraph</p>
+        <h1> Hello My Name is {name}</h1>
+        <p>{phone}</p>
+        <p>{address}</p>
          </>
     )
 }
