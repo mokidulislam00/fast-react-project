@@ -120,7 +120,7 @@ const departments = [
 
 const teachers = [
   {
-    name: "Professor Md. Rahman",
+    name: "	Professor Dr. Sheikh Md. Tazul Islam",
     designation: "Professor",
     department: "Department of Bangla",
     image:
@@ -146,7 +146,7 @@ const gallery = [
   {
     title: "College Campus",
     image:
-      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=900&q=80",
+      "https://cdn.moumachi.com.bd/listings/2019-04/14921/images/original/20246-9511_govt-bm-college-lake.png",
   },
   {
     title: "Library",
@@ -238,7 +238,8 @@ function Navbar({ darkMode, setDarkMode }) {
           <div className="flex items-center gap-2">
 
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              type="button"
+              onClick={() => setDarkMode((prev) => !prev)}
               className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200"
               aria-label="Toggle dark mode"
             >
@@ -315,7 +316,7 @@ function Hero() {
   return (
     <section  
       id="home"
-      className="pt-20 min-h-45' bg-linear-to-br from-teal-950 via-teal-800 to-cyan-800 text-white hero-pattern flex items-center"
+      className="pt-20 min-h-[450px] bg-linear-to-br from-teal-950 via-teal-800 to-cyan-800 text-white hero-pattern flex items-center"
     >
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -327,16 +328,16 @@ function Hero() {
 
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-6">
 
-              <span className="w-2 h-2 bg-cyan-800 rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-cyan-300 rounded-full animate-pulse" />
 
-              <span className="text-sm text-blue-600 font-semibold">
+              <span className="text-sm text-cyan-100 font-semibold">
                 Welcome to BM College, Barishal
               </span>
 
             </div>
 
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-blue-500">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
               Knowledge.
               <br />
 
@@ -350,7 +351,7 @@ function Hero() {
             </h2>
 
 
-            <p className="mt-6 text-lg text-blue-600 max-w-xl leading-relaxed font-bold">
+            <p className="mt-6 text-lg text-cyan-50 max-w-xl leading-relaxed">
               A modern educational platform for students, teachers and
               guardians of BM College, Barishal.
             </p>
@@ -385,21 +386,21 @@ function Hero() {
 
               <div>
                 <p className="text-3xl font-bold">130+</p>
-                <p className="text-sm text-blue-800 font-bold">
+                <p className="text-sm text-cyan-100">
                   Years of Legacy
                 </p>
               </div>
 
               <div>
                 <p className="text-3xl font-bold">50+</p>
-                <p className="text-sm text-blue-800 font-bold">
+                <p className="text-sm text-cyan-100">
                   Departments
                 </p>
               </div>
 
               <div>
                 <p className="text-3xl font-bold">10K+</p>
-                <p className="text-sm text-blue-800 font-bold">
+                <p className="text-sm text-cyan-100">
                   Students
                 </p>
               </div>
@@ -410,7 +411,7 @@ function Hero() {
 
 
           {/* Hero card */}
-          <div className="hidden lg:block">
+          <div className="block">
 
             <div className="relative float-animation">
 
@@ -419,9 +420,9 @@ function Hero() {
               <div className="relative rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl">
 
                 <img
-                  src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=85"
-                  alt="College campus"
-                  className="w-full h-[500px] object-cover"
+                  src="https://cdn.moumachi.com.bd/listings/2019-04/14921/images/original/20246-9511_govt-bm-college-lake.png"
+                  alt="BM College Barishal campus"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
                 />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 bg-linear-to-t from-black/80 to-transparent">
@@ -611,7 +612,7 @@ function Academics() {
 
             <div
               key={department.name}
-              className="group bg-white dark:bg-slate-950 p-7 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-teal-800 rk:hover:border-teal-800 dahover:shadow-xl transition"
+              className="group bg-white dark:bg-slate-950 p-7 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-teal-800 hover:shadow-xl transition-all duration-300"
             >
 
               <div className="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-400 flex items-center justify-center font-black text-sm">
@@ -1774,20 +1775,22 @@ function ScrollToTop() {
 
 export default function App() {
 
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
 
   const [selectedNotice, setSelectedNotice] = useState(null);
 
 
   // Dark mode
   useEffect(() => {
+    const root = document.documentElement;
 
     if (darkMode) {
-      document.documentElement.classList.add("dark");
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-
   }, [darkMode]);
 
 

@@ -16,6 +16,13 @@ body {
     "Segoe UI",
     sans-serif;
   background: #c9d0d8;
+  color: #0f172a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background: #020617;
+  color: #f8fafc;
 }
 
 * {
