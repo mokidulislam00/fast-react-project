@@ -1,10 +1,8 @@
-function Rafsan({name, phone, address}){
-    return(
-        <>
-        <h1>Hello My Name is {name}</h1>
-        <p> {phone}</p>
-        <p> {address}</p>
-         </>
-    )
+export default function Profile() {
+  return (
+    <img
+      src="https://react.dev/images/docs/scientists/lICfvbD.jpg"
+      alt="Aklilu Lemma"
+    />
+  );
 }
-export default Rafsan
