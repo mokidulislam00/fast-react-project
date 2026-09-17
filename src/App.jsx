@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+import collegeImage1 from "./assets/clg-night.jpg";
+import collegeImage2 from "./assets/clg-day.jpg";
+import classroomImage from "./assets/1000077280.jpg";
+import MyImage from "./assets/my-pic.jpg";
+import myImage2 from "./assets/1000076113.jpg";
 
 import {
   Menu,
@@ -120,11 +125,11 @@ const departments = [
 
 const teachers = [
   {
-    name: "	Professor Dr. Sheikh Md. Tazul Islam",
+    name: "	AHMED LABIB",
     designation: "Professor",
-    department: "Department of Bangla",
+    department: "Department of Philosophy",
     image:
-      "https://colfiles.bmcollege.gov.bd/uploads/036b188685.jpeg",
+    MyImage,
   },
   {
     name: "Dr. Nusrat Jahan",
@@ -146,25 +151,26 @@ const gallery = [
   {
     title: "College Campus",
     image:
-      "https://cdn.moumachi.com.bd/listings/2019-04/14921/images/original/20246-9511_govt-bm-college-lake.png",
+      collegeImage1,
   },
   {
-    title: "Library",
+    title: "College Beauty",
     image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+      collegeImage2,
   },
   {
     title: "Classroom",
     image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+      classroomImage,
   },
   {
     title: "Students",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80",
+      myImage2,
   },
 ];
 
+    
 
 // ============================================================
 // NAVBAR
@@ -326,22 +332,22 @@ function Hero() {
           {/* Text */}
           <div className="fade-up">
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/10 border border-green-600 rounded-full mb-6">
 
-              <span className="w-2 h-2 bg-cyan-300 rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" />
 
-              <span className="text-sm text-cyan-100 font-semibold">
+              <span className="text-sm text-blue-500 font-semibold">
                 Welcome to BM College, Barishal
               </span>
 
             </div>
 
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-green-700">
               Knowledge.
               <br />
 
-              <span className="text-purple-400">
+              <span className="text-purple-700">
                 Character.
               </span>
 
@@ -351,7 +357,7 @@ function Hero() {
             </h2>
 
 
-            <p className="mt-6 text-lg text-cyan-50 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-green-700  max-w-xl leading-relaxed">
               A modern educational platform for students, teachers and
               guardians of BM College, Barishal.
             </p>
@@ -361,7 +367,7 @@ function Hero() {
 
               <button
                 onClick={() => goTo("admission")}
-                className="group bg-white text-teal-800 px-7 py-3.5 rounded-full font-bold hover:bg-cyan-100 transition shadow-xl"
+                className="group bg-white text-teal-800 px-7 py-3.5 rounded-full font-bold hover:bg-green-300 transition shadow-xl"
               >
                 Apply for Admission
 
@@ -374,7 +380,7 @@ function Hero() {
 
               <button
                 onClick={() => goTo("about")}
-                className="px-7 py-3.5 rounded-full font-bold border border-white/30 hover:bg-amber-600  transition bg-amber-700"
+                className="px-7 py-3.5 rounded-full font-bold border border-white/30 hover:bg-green-700  transition bg-green-900"
               >
                 Explore College
               </button>
@@ -385,22 +391,22 @@ function Hero() {
             <div className="mt-12 grid grid-cols-3 gap-5 max-w-lg">
 
               <div>
-                <p className="text-3xl font-bold">130+</p>
-                <p className="text-sm text-cyan-100">
+                <p className="text-3xl font-bold text-blue-500">130+</p>
+                <p className="text-sm text-green-800 font-bold">
                   Years of Legacy
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold">50+</p>
-                <p className="text-sm text-cyan-100">
+                <p className="text-3xl font-bold text-blue-500">50+</p>
+                <p className="text-sm text-green-800 font-bold">
                   Departments
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold">10K+</p>
-                <p className="text-sm text-cyan-100">
+                <p className="text-3xl font-bold text-blue-500">10K+</p>
+                <p className="text-sm text-green-800 font-bold">
                   Students
                 </p>
               </div>
@@ -556,7 +562,7 @@ function About() {
                   {stat.number}
                 </p>
 
-                <p className="mt-1 text-slate-500 dark:text-slate-400">
+                <p className="mt-1 text-slate-500 dark:text-slate-400 ">
                   {stat.label}
                 </p>
 
@@ -736,7 +742,7 @@ function Notices({ onNoticeClick }) {
               className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
                 category === item
                   ? "bg-teal-700 text-white"
-                  : "bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-teal-50"
+                  : "bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-green-200"
               }`}
             >
               {item}
@@ -762,7 +768,7 @@ function Notices({ onNoticeClick }) {
 
                 <div className="flex gap-5">
 
-                  <div className="shrink-0 w-14 h-14 rounded-xl bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-400 flex flex-col items-center justify-center">
+                  <div className="shrink-0 w-14 h-14 rounded-xl bg-green-300 dark:bg-green-950 text-green-700 dark:text-green-800 flex flex-col items-center justify-center ">
 
                     <Bell size={18} />
 
@@ -773,7 +779,7 @@ function Notices({ onNoticeClick }) {
 
                     <div className="flex flex-wrap items-center gap-2">
 
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-400">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-green-300 dark:bg-green-950 text-green-700 dark:text-green-400">
                         {notice.category}
                       </span>
 
@@ -795,7 +801,7 @@ function Notices({ onNoticeClick }) {
 
                   <ChevronRight
                     size={20}
-                    className="text-slate-400 shrink-0"
+                    className="text-slate-600 shrink-0"
                   />
 
                 </div>
@@ -1363,7 +1369,7 @@ function Contact() {
                   </p>
 
                   <p className="text-slate-500 dark:text-slate-400 mt-1">
-                    College Office
+                    Call: +880 1516503990
                   </p>
                 </div>
 
@@ -1536,7 +1542,7 @@ function Footer() {
             <div className="mt-6 flex gap-3">
 
              <button
-  onClick={() => alert("Facebook page link will be added here.")}
+  onClick={() => alert("https://www.facebook.com/share/1FzWhmZvun/")}
   className="w-10 h-10 rounded-full bg-slate-900 hover:bg-teal-700 flex items-center justify-center transition font-bold"
   aria-label="Facebook"
 >
@@ -1544,7 +1550,7 @@ function Footer() {
 </button>
 
 <button
-  onClick={() => alert("YouTube channel link will be added here.")}
+  onClick={() => alert("https://www.youtube.com/@bmcollegebarishal")}
   className="w-10 h-10 rounded-full bg-slate-900 hover:bg-teal-700 flex items-center justify-center transition font-bold"
   aria-label="YouTube"
 >
@@ -1646,7 +1652,7 @@ function Footer() {
           </p>
 
           <p className="flex items-center gap-1">
-            Made for learning React <Heart size={14} />
+            Made by Ahmed Labib <Heart size={14} />
           </p>
 
         </div>
