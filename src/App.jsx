@@ -403,12 +403,12 @@ function Hero() {
             </div>
 
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-teal-700">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-black dark:text-white">
               Knowledge.
               <br />
 
-              <span className="text-black dark:text-white bg-clip-text bg-gradient-to-r from-teal-700 to-cyan-400">
-                Character.
+              <span className="text-teal-700">
+              Character.
               </span>
 
               <br />
