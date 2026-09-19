@@ -1,11 +1,12 @@
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/fast-react-project/',
+  base: process.env.GITHUB_ACTIONS ? '/fast-react-project/' : '/',
   plugins: [
     react(),
     tailwindcss(),
+    
   ],
 })
