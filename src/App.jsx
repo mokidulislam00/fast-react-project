@@ -392,7 +392,7 @@ function Hero() {
           {/* Text */}
           <div className="fade-up">
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/10 border border-green-600 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-400/10 border border-teal-700 rounded-full mb-6">
 
               <span className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" />
 
@@ -403,11 +403,11 @@ function Hero() {
             </div>
 
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-green-700">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-teal-700">
               Knowledge.
               <br />
 
-              <span className="text-purple-700">
+              <span className="text-blue-700">
                 Character.
               </span>
 
@@ -417,7 +417,7 @@ function Hero() {
             </h2>
 
 
-            <p className="mt-6 text-lg text-green-700 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-teal-700 max-w-xl leading-relaxed">
               A modern educational platform for students, teachers and
               guardians of BM College, Barishal.
             </p>
@@ -427,7 +427,7 @@ function Hero() {
 
               <button
                 onClick={() => goTo("admission")}
-                className="group bg-white text-teal-800 px-7 py-3.5 rounded-full font-bold hover:bg-green-300 transition shadow-xl"
+                className="group bg-white text-teal-800 px-7 py-3.5 rounded-full font-bold hover:bg-teal-300 transition shadow-xl"
               >
                 Apply for Admission
 
@@ -440,7 +440,7 @@ function Hero() {
 
               <button
                 onClick={() => goTo("about")}
-                className="px-7 py-3.5 rounded-full font-bold border border-white/30 hover:bg-green-700 transition bg-green-900"
+                className="px-7 py-3.5 rounded-full font-bold border border-white/30 hover:bg-teal-700 transition bg-teal-900"
               >
                 Explore College
               </button>
@@ -452,21 +452,21 @@ function Hero() {
 
               <div>
                 <p className="text-3xl font-bold text-blue-500">130+</p>
-                <p className="text-sm text-green-800 font-bold">
+                <p className="text-sm text-teal-800 font-bold">
                   Years of Legacy
                 </p>
               </div>
 
               <div>
                 <p className="text-3xl font-bold text-blue-500">50+</p>
-                <p className="text-sm text-green-800 font-bold">
+                <p className="text-sm text-teal-800 font-bold">
                   Departments
                 </p>
               </div>
 
               <div>
                 <p className="text-3xl font-bold text-blue-500">10K+</p>
-                <p className="text-sm text-green-800 font-bold">
+                <p className="text-sm text-teal-800 font-bold">
                   Students
                 </p>
               </div>
@@ -828,7 +828,7 @@ function Notices({ onNoticeClick }) {
 
                 <div className="flex gap-5">
 
-                  <div className="shrink-0 w-14 h-14 rounded-xl bg-green-300 dark:bg-green-950 text-green-700 dark:text-green-800 flex flex-col items-center justify-center">
+                  <div className="shrink-0 w-14 h-14 rounded-xl bg-blue-300 dark:bg-blue-950 text-blue-700 dark:text-blue-800 flex flex-col items-center justify-center">
 
                     <Bell size={18} />
 
@@ -839,7 +839,7 @@ function Notices({ onNoticeClick }) {
 
                     <div className="flex flex-wrap items-center gap-2">
 
-                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-green-300 dark:bg-green-950 text-green-700 dark:text-green-400">
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-teal-300 dark:bg-teal-950 text-teal-700 dark:text-teal-400">
                         {notice.category}
                       </span>
 
