@@ -16,7 +16,6 @@ import {
   MapPin,
   Phone,
   Mail,
-
   Search,
   ArrowRight,
   ChevronRight,
@@ -125,11 +124,10 @@ const departments = [
 
 const teachers = [
   {
-    name: "	AHMED LABIB",
+    name: "AHMED LABIB",
     designation: "Professor",
     department: "Department of Philosophy",
-    image:
-    MyImage,
+    image: MyImage,
   },
   {
     name: "Dr. Nusrat Jahan",
@@ -150,27 +148,89 @@ const teachers = [
 const gallery = [
   {
     title: "College Campus",
-    image:
-      collegeImage1,
+    image: collegeImage1,
   },
   {
     title: "College Beauty",
-    image:
-      collegeImage2,
+    image: collegeImage2,
   },
   {
     title: "Classroom",
-    image:
-      classroomImage,
+    image: classroomImage,
   },
   {
     title: "Students",
-    image:
-      myImage2,
+    image: myImage2,
   },
 ];
 
-    
+
+// ============================================================
+// CUSTOM ANIMATED CURSOR
+// ============================================================
+
+function CustomCursor() {
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setPosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    const handleMouseOver = (e) => {
+      const target = e.target;
+
+      if (
+        target.closest(
+          "button, a, input, textarea, select, [role='button']"
+        )
+      ) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseover", handleMouseOver);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseover", handleMouseOver);
+    };
+  }, []);
+
+  return (
+    <>
+      <div
+        className="custom-cursor-dot"
+        style={{
+          left: position.x,
+          top: position.y,
+        }}
+      />
+
+      <div
+        className={`custom-cursor-circle ${
+          isHovering ? "cursor-hover" : ""
+        }`}
+        style={{
+          left: position.x,
+          top: position.y,
+        }}
+      />
+    </>
+  );
+}
+
 
 // ============================================================
 // NAVBAR
@@ -320,7 +380,7 @@ function Hero() {
   };
 
   return (
-    <section  
+    <section
       id="home"
       className="pt-20 min-h-[450px] bg-linear-to-br from-teal-950 via-teal-800 to-cyan-800 text-white hero-pattern flex items-center"
     >
@@ -357,7 +417,7 @@ function Hero() {
             </h2>
 
 
-            <p className="mt-6 text-lg text-green-700  max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg text-green-700 max-w-xl leading-relaxed">
               A modern educational platform for students, teachers and
               guardians of BM College, Barishal.
             </p>
@@ -380,7 +440,7 @@ function Hero() {
 
               <button
                 onClick={() => goTo("about")}
-                className="px-7 py-3.5 rounded-full font-bold border border-white/30 hover:bg-green-700  transition bg-green-900"
+                className="px-7 py-3.5 rounded-full font-bold border border-white/30 hover:bg-green-700 transition bg-green-900"
               >
                 Explore College
               </button>
@@ -562,7 +622,7 @@ function About() {
                   {stat.number}
                 </p>
 
-                <p className="mt-1 text-slate-500 dark:text-slate-400 ">
+                <p className="mt-1 text-slate-500 dark:text-slate-400">
                   {stat.label}
                 </p>
 
@@ -768,7 +828,7 @@ function Notices({ onNoticeClick }) {
 
                 <div className="flex gap-5">
 
-                  <div className="shrink-0 w-14 h-14 rounded-xl bg-green-300 dark:bg-green-950 text-green-700 dark:text-green-800 flex flex-col items-center justify-center ">
+                  <div className="shrink-0 w-14 h-14 rounded-xl bg-green-300 dark:bg-green-950 text-green-700 dark:text-green-800 flex flex-col items-center justify-center">
 
                     <Bell size={18} />
 
@@ -1102,33 +1162,18 @@ function Admission() {
               <div className="mt-8 space-y-5">
 
                 <div className="flex gap-4">
-
                   <CheckCircle className="text-cyan-300 shrink-0" />
-
-                  <span>
-                    Quality academic environment
-                  </span>
-
+                  <span>Quality academic environment</span>
                 </div>
 
                 <div className="flex gap-4">
-
                   <CheckCircle className="text-cyan-300 shrink-0" />
-
-                  <span>
-                    Experienced faculty members
-                  </span>
-
+                  <span>Experienced faculty members</span>
                 </div>
 
                 <div className="flex gap-4">
-
                   <CheckCircle className="text-cyan-300 shrink-0" />
-
-                  <span>
-                    Student-focused activities
-                  </span>
-
+                  <span>Student-focused activities</span>
                 </div>
 
               </div>
@@ -1143,9 +1188,7 @@ function Admission() {
                 <div className="h-full flex flex-col items-center justify-center text-center">
 
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
-
                     <CheckCircle size={34} />
-
                   </div>
 
                   <h3 className="mt-5 text-2xl font-bold text-slate-900 dark:text-white">
@@ -1541,21 +1584,25 @@ function Footer() {
 
             <div className="mt-6 flex gap-3">
 
-             <button
-  onClick={() => alert("https://www.facebook.com/share/1FzWhmZvun/")}
-  className="w-10 h-10 rounded-full bg-slate-900 hover:bg-teal-700 flex items-center justify-center transition font-bold"
-  aria-label="Facebook"
->
-  f
-</button>
+              <button
+                onClick={() =>
+                  alert("https://www.facebook.com/share/1FzWhmZvun/")
+                }
+                className="w-10 h-10 rounded-full bg-slate-900 hover:bg-teal-700 flex items-center justify-center transition font-bold"
+                aria-label="Facebook"
+              >
+                f
+              </button>
 
-<button
-  onClick={() => alert("https://www.youtube.com/@bmcollegebarishal")}
-  className="w-10 h-10 rounded-full bg-slate-900 hover:bg-teal-700 flex items-center justify-center transition font-bold"
-  aria-label="YouTube"
->
-  ▶
-</button>
+              <button
+                onClick={() =>
+                  alert("https://www.youtube.com/@bmcollegebarishal")
+                }
+                className="w-10 h-10 rounded-full bg-slate-900 hover:bg-teal-700 flex items-center justify-center transition font-bold"
+                aria-label="YouTube"
+              >
+                ▶
+              </button>
 
             </div>
 
@@ -1781,7 +1828,9 @@ function ScrollToTop() {
 
 export default function App() {
 
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
 
   const [selectedNotice, setSelectedNotice] = useState(null);
 
@@ -1802,55 +1851,58 @@ export default function App() {
 
   // Page title
   useEffect(() => {
-
     document.title = "BM College Barishal | Education & Excellence";
-
   }, []);
 
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+    <>
+      {/* Custom Cursor */}
+      <CustomCursor />
 
-      <Navbar
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
+      <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
 
-
-      <main>
-
-        <Hero />
-
-        <About />
-
-        <Academics />
-
-        <Notices
-          onNoticeClick={setSelectedNotice}
+        <Navbar
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
 
-        <Teachers />
 
-        <Gallery />
+        <main>
 
-        <Admission />
+          <Hero />
 
-        <Contact />
+          <About />
 
-      </main>
+          <Academics />
+
+          <Notices
+            onNoticeClick={setSelectedNotice}
+          />
+
+          <Teachers />
+
+          <Gallery />
+
+          <Admission />
+
+          <Contact />
+
+        </main>
 
 
-      <Footer />
+        <Footer />
 
 
-      <NoticeModal
-        notice={selectedNotice}
-        onClose={() => setSelectedNotice(null)}
-      />
+        <NoticeModal
+          notice={selectedNotice}
+          onClose={() => setSelectedNotice(null)}
+        />
 
 
-      <ScrollToTop />
+        <ScrollToTop />
 
-    </div>
+      </div>
+    </>
   );
 }
