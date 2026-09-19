@@ -458,14 +458,14 @@ function Hero() {
               </div>
 
               <div>
-                <p className="text-3xl font-bold text-black dark:text-white">50+</p>
+                <p className="text-3xl font-bold text-black dark:text-white">22</p>
                 <p className="text-sm text-teal-800 font-bold">
                   Departments
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold text-black dark:text-white">10K+</p>
+                <p className="text-3xl font-bold text-black dark:text-white">30K+</p>
                 <p className="text-sm text-teal-800 font-bold">
                   Students
                 </p>
