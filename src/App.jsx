@@ -396,7 +396,7 @@ function Hero() {
 
               <span className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" />
 
-              <span className="text-sm text-blue-500 font-semibold">
+              <span className="text-sm text-black dark:text-white font-semibold">
                 Welcome to BM College, Barishal
               </span>
 
@@ -407,7 +407,7 @@ function Hero() {
               Knowledge.
               <br />
 
-              <span className="text-blue-700">
+              <span className="text-black dark:text-white bg-clip-text bg-gradient-to-r from-teal-700 to-cyan-400">
                 Character.
               </span>
 
@@ -451,21 +451,21 @@ function Hero() {
             <div className="mt-12 grid grid-cols-3 gap-5 max-w-lg">
 
               <div>
-                <p className="text-3xl font-bold text-blue-500">130+</p>
+                <p className="text-3xl font-bold text-black dark:text-white">130+</p>
                 <p className="text-sm text-teal-800 font-bold">
                   Years of Legacy
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold text-blue-500">50+</p>
+                <p className="text-3xl font-bold text-black dark:text-white">50+</p>
                 <p className="text-sm text-teal-800 font-bold">
                   Departments
                 </p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold text-blue-500">10K+</p>
+                <p className="text-3xl font-bold text-black dark:text-white">10K+</p>
                 <p className="text-sm text-teal-800 font-bold">
                   Students
                 </p>

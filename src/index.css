@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
@@ -16,13 +15,9 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-
   background: #c9d0d8;
   color: #0f172a;
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html.dark body {
@@ -39,31 +34,12 @@ html.dark body {
   color: white;
 }
 
-
-/* ============================================================
-   HERO PATTERN
-   ============================================================ */
-
 .hero-pattern {
   background-image:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 255, 255, 0.12) 0 2px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(255, 255, 255, 0.08) 0 2px,
-      transparent 2px
-    );
-
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12) 0 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0 2px, transparent 2px);
   background-size: 40px 40px;
 }
-
-
-/* ============================================================
-   FLOAT ANIMATION
-   ============================================================ */
 
 @keyframes float {
   0%,
@@ -80,11 +56,6 @@ html.dark body {
   animation: float 4s ease-in-out infinite;
 }
 
-
-/* ============================================================
-   FADE UP ANIMATION
-   ============================================================ */
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -99,103 +70,4 @@ html.dark body {
 
 .fade-up {
   animation: fadeUp 0.7s ease forwards;
-}
-
-
-/* ============================================================
-   CUSTOM ANIMATED CURSOR
-   ============================================================ */
-
-@media (pointer: fine) {
-
-  /* Hide default mouse cursor */
-  body {
-    cursor: none;
-  }
-
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  [role="button"] {
-    cursor: none;
-  }
-
-
-  /* Small center dot */
-  .custom-cursor-dot {
-    position: fixed;
-
-    width: 8px;
-    height: 8px;
-
-    background: #14b8a6;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 99999;
-
-    transform: translate(-50%, -50%);
-
-    box-shadow:
-      0 0 10px rgba(20, 184, 166, 0.7),
-      0 0 20px rgba(20, 184, 166, 0.3);
-  }
-
-
-  /* Outer circle */
-  .custom-cursor-circle {
-    position: fixed;
-
-    width: 38px;
-    height: 38px;
-
-    border: 2px solid #14b8a6;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 99998;
-
-    transform: translate(-50%, -50%);
-
-    transition:
-      width 0.2s ease,
-      height 0.2s ease,
-      background 0.2s ease,
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-
-  /* When cursor is over button/link/input */
-  .custom-cursor-circle.cursor-hover {
-    width: 58px;
-    height: 58px;
-
-    background: rgba(20, 184, 166, 0.12);
-
-    border-color: #06b6d4;
-
-    box-shadow:
-      0 0 15px rgba(6, 182, 212, 0.35),
-      inset 0 0 12px rgba(20, 184, 166, 0.08);
-  }
-}
-
-
-/* ============================================================
-   TOUCH DEVICES
-   ============================================================ */
-
-@media (pointer: coarse) {
-
-  .custom-cursor-dot,
-  .custom-cursor-circle {
-    display: none;
-  }
 }
